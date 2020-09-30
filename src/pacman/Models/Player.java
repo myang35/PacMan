@@ -5,6 +5,9 @@
  */
 package pacman.Models;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  *
  * @author Marvin
@@ -41,6 +44,17 @@ public class Player extends GameObject {
     
     public void addScore() {
         score++;
+    }
+
+    @Override
+    public void tick() {
+        
+    }
+
+    @Override
+    public void render(Graphics g) {
+        g.setColor(Color.YELLOW);
+        g.fillOval(x, y, width, height);
     }
     
 }

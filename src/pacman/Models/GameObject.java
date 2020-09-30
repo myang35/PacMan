@@ -5,6 +5,7 @@
  */
 package pacman.Models;
 
+import java.awt.Graphics;
 import java.awt.Rectangle;
 
 /**
@@ -96,5 +97,8 @@ public abstract class GameObject {
         this.bounds = bounds;
     }
     
+    public abstract void tick();
+    
+    public abstract void render(Graphics g);
     
 }

@@ -5,12 +5,16 @@
  */
 package pacman.Models;
 
+import java.awt.Graphics;
+import java.util.ArrayList;
+
 /**
  *
  * @author Marvin
  */
 public class GameModel {
     private int level;
+    private ArrayList<GameObject> objects = new ArrayList<>();
     
     public GameModel() {
         level = 1;
@@ -22,5 +26,17 @@ public class GameModel {
     
     public void nextLevel() {
         level++;
+    }
+    
+    public void tick() {
+        for (GameObject o : objects) {
+            o.tick();
+        }
+    }
+    
+    public void render(Graphics g) {
+        for (GameObject o : objects) {
+            o.render(g);
+        }
     }
 }
