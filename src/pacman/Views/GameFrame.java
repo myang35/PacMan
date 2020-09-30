@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import pacman.Models.GameModel;
 
 /**
  *
@@ -16,14 +17,19 @@ import javax.swing.JFrame;
  */
 public class GameFrame extends JFrame {
     
+    GameModel model;
+    
     /**
      * Create full screen frame.
+     * @param model
      */
-    public GameFrame() {
+    public GameFrame(GameModel model) {
+        this.model = model;
+        
         // Add back button
         JButton backButton = new JButton("Back");
         backButton.addActionListener((ActionEvent e) -> {
-            new MenuFrame();
+            new MenuFrame(model);
             dispose();
         });
         add(backButton);
@@ -43,10 +49,13 @@ public class GameFrame extends JFrame {
 
     /**
      * Create frame with custom size.
+     * @param model
      * @param width
      * @param height 
      */
-    public GameFrame(int width, int height) {
+    public GameFrame(GameModel model, int width, int height) {
+        this.model = model;
+        
         // Set the frame's title
         setTitle("Pac Man");
 

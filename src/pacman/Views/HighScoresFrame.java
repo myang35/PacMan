@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import pacman.Models.GameModel;
 
 /**
  *
@@ -19,7 +20,11 @@ import javax.swing.JScrollPane;
  */
 public class HighScoresFrame extends JFrame {
     
-    public HighScoresFrame() {
+    GameModel model;
+    
+    public HighScoresFrame(GameModel model) {
+        this.model = model;
+        
         JScrollPane scrollPane = new JScrollPane(new JPanel());
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         add(scrollPane);
@@ -27,7 +32,7 @@ public class HighScoresFrame extends JFrame {
         // Add back button
         JButton backButton = new JButton("Back");
         backButton.addActionListener((ActionEvent e) -> {
-            new MenuFrame();
+            new MenuFrame(model);
             dispose();
         });
         add(backButton);

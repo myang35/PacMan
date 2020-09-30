@@ -5,6 +5,7 @@
  */
 package pacman;
 
+import pacman.Models.GameModel;
 import pacman.Views.MenuFrame;
 
 /**
@@ -17,7 +18,8 @@ public class PacMan {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new MenuFrame();
+        GameModel model = new GameModel();
+        new MenuFrame(model);
     }
     
 }

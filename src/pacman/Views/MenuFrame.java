@@ -15,6 +15,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import pacman.Models.GameModel;
 
 /**
  *
@@ -22,7 +23,11 @@ import javax.swing.JLabel;
  */
 public class MenuFrame extends JFrame {
     
-    public MenuFrame() {
+    GameModel model;
+    
+    public MenuFrame(GameModel model) {
+        this.model = model;
+        
         add(Box.createVerticalStrut(10)); // Spacer
         
         // Create title label
@@ -35,7 +40,7 @@ public class MenuFrame extends JFrame {
         
         // Add play button
         addButton("Play").addActionListener((ActionEvent e) -> {
-            new GameFrame();
+            new GameFrame(model);
             dispose();
         });
         
@@ -43,7 +48,7 @@ public class MenuFrame extends JFrame {
         
         // Add high scores button
         addButton("High Scores").addActionListener((ActionEvent e) -> {
-            new HighScoresFrame();
+            new HighScoresFrame(model);
             dispose();
         });
         
