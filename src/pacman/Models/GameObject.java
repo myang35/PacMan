@@ -18,7 +18,7 @@ public abstract class GameObject {
     protected int height;
     protected int xVelocity;
     protected int yVelocity;
-    protected Rectangle collisionBoundary;
+    protected Rectangle bounds;
     
     public GameObject(int x, int y) {
         this.x = x;
@@ -27,7 +27,7 @@ public abstract class GameObject {
         this.height = 32;
         this.xVelocity = 0;
         this.yVelocity = 0;
-        collisionBoundary = new Rectangle(x, y, width, height);
+        bounds = new Rectangle(x, y, width, height);
     }
     
     public GameObject(int x, int y, int width, int height) {
@@ -37,7 +37,7 @@ public abstract class GameObject {
         this.height = height;
         this.xVelocity = 0;
         this.yVelocity = 0;
-        collisionBoundary = new Rectangle(x, y, width, height);
+        bounds = new Rectangle(x, y, width, height);
     }
 
     public int getX() {
@@ -88,12 +88,12 @@ public abstract class GameObject {
         this.yVelocity = yVelocity;
     }
 
-    public Rectangle getCollisionBoundary() {
-        return collisionBoundary;
+    public Rectangle getBounds() {
+        return bounds;
     }
 
-    public void setCollisionBoundary(Rectangle collisionBoundary) {
-        this.collisionBoundary = collisionBoundary;
+    public void setBounds(Rectangle bounds) {
+        this.bounds = bounds;
     }
     
     
