@@ -10,16 +10,10 @@ package pacman.Models;
  * @author Marvin
  */
 public class GameModel {
-    public static final String TITLE = "Pac Man";
-    
     private int level;
     
     public GameModel() {
         level = 1;
-    }
-
-    public static String getTitle() {
-        return TITLE;
     }
     
     public int getLevel() {
